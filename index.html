@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>Inventaire du héro</h1>
+    <div>
+        <input v-model="newTask" placeholder="Item">
+        <button id="ajouter" @click="addTask">Ajouter</button>
+         <!-- Ajouter une nouvelle tâche -->
+    </div>
+
+    <!-- Afficher la liste des tâches -->
+    <ul>
+        <li v-for="(task, index) in tasks" :key="index" class="{ complete: task.complete}" >
+            <span v-if="editIndex != index" @click="editTask(index)">{{ task }}</span>
+            <input v-else v-model="tasks[index]" @blur="saveEdit" @keyup.enter="saveEdit" @keyup.esc="cancelEdit">
+            <button id="Modifier" @click="toggleEdit(index)">{{ editIndex === index ? 'Enregistrer' : 'Modifier' }}</button>
+            <button id="supprimer" @click="removeTask(index)">Supprimer</button>
+            
+        </li>
+    </ul>
+</div>
+
+
+<!-- Inclure Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+</body>
+</html>

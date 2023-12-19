@@ -1,0 +1,57 @@
+*, ::before, ::after
+{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body
+{
+    min-height: 100vh;
+    background-image: url(./fond.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+h1
+{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.306);
+    color:cornsilk;
+}
+div{
+    text-align: center;
+}
+input
+{
+    font-size: 15px;
+    font-family:Verdana;
+}
+span{
+    color: azure;
+}
+#Modifier
+{
+    border-radius: 4px;
+    background-color: green;
+    color: azure;
+    transform: scaleX(1px);
+}
+#supprimer
+{
+    background-color: rgb(153, 6, 6);
+    color: beige;
+    transform: scaleX(1px);
+}
+#ajouter
+{
+    background-color: palevioletred;
+    color: white;
+    transform: scaleX(1px);
+}
+
+@media screen and (max-width : 450px){
+    body{
+        background-position: 80% 50%;
+        
+    }
+}
